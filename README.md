@@ -4,7 +4,7 @@
 ✨ Website edukasi dan aksi lingkungan digital yang mengubah cara kita memandang sampah.
 🌱 Di Greenovation, kamu bisa belajar mendaur ulang, bermain game edukatif, hingga menjual sampah daur ulangmu dengan mudah!
 
-🔗 Lihat versi live: greenovation-80093.web.app
+🔗 Lihat versi live: https://greenovation-80093.web.app/
 
 🧠 Dibangun menggunakan HTML, Tailwind CSS, dan GitHub Pages, proyek ini menjadi media interaktif untuk mendukung gerakan ramah lingkungan berbasis teknologi.
 
