@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenovation</title>
+    <link href="../src/output.css" rel="stylesheet">
+<link rel="icon" href="../src/image/logo.png" type="image/png" sizes="512x512">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <style>
+      /* Pastikan map selalu di bawah header */
+  #map {
+    position: relative;
+    z-index: 0;
+  }
+  @media (max-width: 360px) {
+  section.hero-section {
+    height: 350px;
+    background-position: top center;
+  }
+}
+
+  /* Turunkan z-index dari layer internal Leaflet */
+  .leaflet-pane,
+  .leaflet-top,
+  .leaflet-bottom {
+    z-index: 0 !important;
+  }
+    /* Hover effect hijau pada card jenis sampah */
+    .sampah-card:hover {
+      border: 2px solid #16a34a;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+      transform: scale(1.03);
+      transition: all 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+ <!-- HEADER -->
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="index.html">
+      <img src="../src/image/logo.png" alt="Logo" class="h-16 w-auto">
+    </a>
+
+    <!-- Menu Navigasi (Desktop) -->
+    <nav class="hidden md:flex space-x-6 font-medium">
+      <a href="tentangkami.html" class="hover:text-green-600">Tentang Kami</a>
+      <a href="layanan.html" class="hover:text-green-600">Layanan</a>
+      <a href="video.html" class="hover:text-green-600">Video</a>
+      <a href="game.html" class="hover:text-green-600">Game</a>
+      <a href="belanja.html" class="hover:text-green-600">Toko</a>
+    </nav>
+
+    <!-- Burger Button (Mobile) -->
+    <button id="burger-btn" class="md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay & Drawer -->
+<div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col p-6 space-y-4">
+  <div class="flex justify-between items-center">
+    <span class="font-bold text-lg text-green-700">Menu</span>
+    <button id="close-menu" class="focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <a href="tentangkami.html" class="hover:text-green-600">Tentang Kami</a>
+  <a href="layanan.html" class="hover:text-green-600">Layanan</a>
+  <a href="video.html" class="hover:text-green-600">Video</a>
+  <a href="game.html" class="hover:text-green-600">Game</a>
+  <a href="belanja.html" class="hover:text-green-600">Toko</a>
+
+  <div class="mt-auto text-xs text-gray-500 border-t pt-4">
+    © 2025 Greenovation
+  </div>
+</div>
+<!-- Tambahkan margin-top di bawah header agar tidak ketutupan -->
+<div class="h-16"></div>
+
+
+
+   <!-- HERO -->
+<section class="relative bg-cover bg-top bg-no-repeat h-[250px] sm:h-[500px] md:h-[600px]"
+         style="background-image: url('../src/image/header.png');">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col justify-center h-full">
+    <h1 class="text-3xl md:text-5xl font-bold text-white">Greenovation</h1>
+    <p class="text-white text-lg mt-2">#SampahJadiCuanSampahJadiKarya</p>
+  </div>
+</section>
+
+
+
+
+
+
+
+ <!-- Misi Kami -->
+<section class="max-w-6xl mx-auto py-12 px-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    
+    <!-- Gambar -->
+    <div>
+      <img src="../src/image/tentang.png" alt="Misi Kami" 
+           class="rounded-lg shadow-md w-full object-cover">
+    </div>
+
+    <!-- Teks -->
+    <div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">
+        Misi Kami Menyediakan Akses Daur Ulang Bagi Semua Orang, Serta Mengedukasi dengan cara menghibur.
+      </h2>
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        Greenovation adalah platform edukasi lingkungan berbasis game dan video, sekaligus layanan penukaran sampah jadi uang yang bisa dijemput atau diserahkan langsung.
+      </p>
+
+      <!-- Tombol atau CTA -->
+      <a href="tentangkami.html" 
+         class="inline-flex items-center text-green-600 font-semibold hover:underline">
+        Semua Tentang Kami di sini →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Layanan -->
+<section class="max-w-6xl mx-auto py-12 px-4">
+    <h3 class="text-2xl font-bold text-center">Layanan</h3>
+            <p class="text-center text-gray-600 mb-6">Mengubah sampah menjadi uang dari Greenovation untuk semua orang.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="./layanan/pickup.html" class="layanan-card block border rounded-lg p-4 hover:bg-green-50">
+  <div class="flex items-center gap-2">
+    <img src="../src/image/pickup.png" alt="Drop Off" class="w-10 h-10 mt-2 mb-2">
+    <h4 class="font-bold text-lg hover:text-green-600">Pickup</h4>
+  </div>
+
+  <p class="text-gray-600 text-sm mt-2 hover:text-green-600">
+    Isi formulir yang sudah disediakan, setelah itu kamu kirim formulir itu ke Whatsapp, beserta foto sampah daur ulangmu. Greenovation akan menjemput, menimbang, dan membayar sampahmu.
+  </p>
+</a>
+    <a href="./layanan/dropoff.html" class="layanan-card block border rounded-lg p-4 hover:bg-green-50">
+  <div class="flex items-center gap-2">
+    <img src="../src/image/dropoff.png" alt="Drop Off" class="w-10 h-10 mt-2 mb-2">
+    <h4 class="font-bold text-lg hover:text-green-600">Drop Off</h4>
+  </div>
+
+  <p class="text-gray-600 text-sm mt-2 hover:text-green-600">
+Antar langsung sampah daur ulangmu Recycling Centre terdekat, kamu bisa mendaur ulang dengan ukuran kecil seperti satu botol plastik.  </p>
+</a>
+
+    </div>
+  </section>
+
+  <!-- Jenis Sampah -->
+ <section class="max-w-6xl mx-auto py-12 px-4">
+
+    <h3 class="text-2xl font-bold text-center">Jenis Sampah</h3>
+            <p class="text-center text-gray-600 mb-6">Lihat jenis sampah yang kami daur.</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <a href="jenis/kertas.html" class="sampah-card border p-6 rounded-lg">
+        <img src="../src/image/Kertas.png" alt="" class="mx-auto mb-2 w-8 h-8">
+         <p class="font-semibold mt-2">Kertas</p>
+      </a>
+      <a href="jenis/plastik.html" class="sampah-card border p-6 rounded-lg">
+        <img src="../src/image/plastik.png" alt="" class="mx-auto  w-11 h-11">
+        <p class="font-semibold ">Plastik</p>
+      </a>
+      <a href="jenis/almunium.html" class="sampah-card border p-6 rounded-lg">
+                <img src="../src/image/Alumunium.png" alt="" class="mx-auto  w-11 h-11">
+         <p class="font-semibold ">Almunium</p>
+      </a>
+      <a href="jenis/besi.html" class="sampah-card border p-6 rounded-lg">
+                <img src="../src/image/besi&logam.png" alt="" class="mx-auto mb-2 w-8 h-8">
+         <p class="font-semibold mt-2"> Besi & Logam</p>
+      </a>
+         <a href="jenis/kain.html" class="sampah-card border p-6 rounded-lg">
+                <img src="../src/image/Kain.png" alt="" class="mx-auto mb-2 w-8 h-8">
+         <p class="font-semibold mt-2">Kain</p>
+      </a>
+         <a href="jenis/minyak.html" class="sampah-card border p-6 rounded-lg">
+                <img src="../src/image/Minyak.png" alt="" class="mx-auto mb-2 w-8 h-8">
+         <p class="font-semibold mt-2">Minyak</p>
+      </a>
+         <a href="jenis/elektronik.html" class="sampah-card border p-6 rounded-lg">
+                <img src="../src/image/elektronik.png" alt="" class="mx-auto  w-10 h-10">
+         <p class="font-semibold ">Elektronik</p>
+      </a>
+         <a href="jenis/botolkaca.html" class="sampah-card border p-6 rounded-lg">
+                <img src="../src/image/botolkaca.png" alt="" class="mx-auto mb-2 w-8 h-8">
+         <p class="font-semibold mt-2">Botol Kaca</p>
+         </a>
+    </div>
+  </section>
+
+  <!-- Map -->
+ <section class="max-w-6xl mx-auto py-12 px-4">
+
+    <h3 class="text-2xl font-bold text-center ">Lokasi Drop Off </h3>
+        <p class="text-center text-gray-600 mb-6">Antar sampah daur ulangmu ke lokasi terdekat.</p>
+
+    <div id="map" class="h-96 w-full rounded-lg"></div>
+  </section>
+
+<section class="max-w-6xl mx-auto py-12 px-4">
+
+  <h3 class="text-2xl font-bold text-center mb-2">Video</h3>
+  <p class="text-center text-gray-600 mb-6">
+    Belajar Mendaur ulang sampah bersama <span class="font-semibold">Greenovation</span>
+  </p>
+
+  <!-- Grid Video -->
+ <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+  <a href="videofull.html?id=WQCevNdGOUs&title=Kerajinan%20dari%20Botol%20bekas" class="bg-white rounded-lg overflow-hidden block hover:shadow-lg">
+    <img src="https://img.youtube.com/vi/WQCevNdGOUs/hqdefault.jpg" class="w-full aspect-video">
+    <div class="mt-2 p-2">
+      <p class="text-sm font-semibold">Kerajinan Dari Botol Bekas </p>
+      <p class="text-xs text-gray-500">Greenovation</p>
+    </div>
+  </a>
+  
+
+  <a href="videofull.html?id=ogE3n_KdYfg&title=Kerajinan%20Dari%20Gelas%20Plastik" class="bg-white rounded-lg overflow-hidden block hover:shadow-lg">
+    <img src="https://img.youtube.com/vi/ogE3n_KdYfg/hqdefault.jpg" class="w-full aspect-video">
+    <div class="mt-2 p-2">
+      <p class="text-sm font-semibold">Kerajinan Dari Gelas Plastik</p>
+      <p class="text-xs text-gray-500">Greenovation</p>
+    </div>
+  </a>
+
+  <a href="videofull.html?id=Rx0rDtX89gw&title=Ubah%20Bungkus%20Mie%20Menjadi%20Dompet" class="bg-white rounded-lg overflow-hidden block hover:shadow-lg">
+    <img src="https://img.youtube.com/vi/Rx0rDtX89gw/hqdefault.jpg" class="w-full aspect-video">
+    <div class="mt-2 p-2">
+      <p class="text-sm font-semibold">Ubah Bungkus Mie Menjadi Dompet</p>
+      <p class="text-xs text-gray-500">Greenovation</p>
+    </div>
+  </a>
+    <a href="videofull.html?id=kU6OvhRf21k&title=Ubah%20Gelas%20Plastik%20Menjadi%20Vas" class="bg-white rounded-lg overflow-hidden block hover:shadow-lg">
+    <img src="https://img.youtube.com/vi/kU6OvhRf21k/hqdefault.jpg" class="w-full aspect-video">
+    <div class="mt-2 p-2">
+      <p class="text-sm font-semibold">Ubah Gelas Plastik Menjadi Vas</p>
+      <p class="text-xs text-gray-500">Greenovation</p>
+    </div>
+  </a>
+
+
+
+
+  <!-- Tombol Lihat Semua -->
+  <div class="text-start">
+    <a href="video.html"
+       class="inline-flex items-center gap-2 border border-green-600 text-green-600 font-semibold rounded-md px-3 py-1 hover:bg-green-50 transition">
+      Tampilkan semua video
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</section>
+
+
+  <!-- Game -->
+ <section class="max-w-6xl mx-auto py-12 px-4">
+
+    <h3 class="text-2xl font-bold text-center mb-2">Game</h3>
+    <p class="text-center text-gray-600 mb-6">Belajar bersama Greenovation melalui game.</p>
+    <div class="space-y-4 mb-4">
+   <div class="flex justify-between items-center border rounded-lg p-3 hover:bg-green-50">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-gray-300 rounded bg-cover bg-center" style="background-image: url('../src/image/binhero.png');"></div>
+      <p class="font-medium">Bin Hero</p>
+    </div>
+    <a href="binhero/index.html" class="border border-green-600 text-green-600 px-3 py-1 rounded hover:bg-green-600 hover:text-white transition">Play</a>
+  </div>
+
+  <div class="flex justify-between items-center border rounded-lg p-3 hover:bg-green-50">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 bg-gray-300 rounded bg-cover bg-center" style="background-image: url('../src/image/ecoquiz.png');"></div>
+      <p class="font-medium">Eco Quiz</p>
+    </div>
+    <a href="ecoquiz/index.html" class="border border-green-600 text-green-600 px-3 py-1 rounded hover:bg-green-600 hover:text-white transition">Play</a>
+  </div>
+    </div>
+    <div class="text-start">
+        <a href="game.html" class="inline-flex items-center gap-2 border border-green-600 text-green-600 font-semibold  rounded-md px-3 py-1 hover:bg-green-50 transition">
+  Tampilkan semua Game ->
+  </a></div>
+  </section>
+
+  <!-- Belanja -->
+ <section class="max-w-6xl mx-auto py-12 px-4">
+
+    <h3 class="text-2xl font-bold text-center mb-2">Toko</h3>
+    <p class="text-center text-gray-600 mb-6">Greenovation menjual barang dari daur ulang</p>
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 mb-4">
+      <div class="border rounded-lg p-4 hover:shadow-lg transition"> <img src="../src/image/tasdaur.jpeg" alt="Tas Daur Ulang" class="w-full h-40 object-cover rounded mb-3"><p class="font-medium">Tas Daur Ulang</p> <p class="text-red-500 font-semibold mt-1">Rp 100.000</p> <a href="https://wa.me/c/62881012478760" class="block mt-3 text-center border border-green-600 text-green-600 px-3 py-1 rounded hover:bg-green-600 hover:text-white transition"> Beli </a></div>
+      <div class="border rounded-lg p-4 hover:shadow-lg transition"><img src="../src/image/tempatpensil.jpeg" alt="Tempat Pensil" class="w-full h-40 object-cover rounded mb-3"><p class="font-medium">Tempat Pensil</p><p class="text-red-500 font-semibold mt-1">Rp 20.000</p><a href="https://wa.me/c/62881012478760" class="block mt-3 text-center border border-green-600 text-green-600 px-3 py-1 rounded hover:bg-green-600 hover:text-white transition">Beli</a></div>
+      <div class="border rounded-lg p-4 hover:shadow-lg transition"><img src="../src/image/dompetdaur.jpeg" alt="Dompet Daur Ulang" class="w-full h-40 object-cover rounded mb-3"><p class="font-medium">Dompet</p><p class="text-red-500 font-semibold mt-1">Rp 45.000</p><a href="https://wa.me/c/62881012478760" class="block mt-3 text-center border border-green-600 text-green-600 px-3 py-1 rounded hover:bg-green-600 hover:text-white transition">Beli</a></div>
+      <div class="border rounded-lg p-4 hover:shadow-lg transition"><img src="../src/image/tempatsampah.jpeg" alt="Tempat Sampah Mini Daur Ulang" class="w-full h-40 object-cover rounded mb-3"><p class="font-medium">Tempat Sampah Mini</p><p class="text-red-500 font-semibold mt-1">Rp 35.000</p><a href="https://wa.me/c/62881012478760" class="block mt-3 text-center border border-green-600 text-green-600 px-3 py-1 rounded hover:bg-green-600 hover:text-white transition">Beli</a></div>
+    </div>
+    <div class="text-start">
+        <a href="belanja.html" class="inline-flex items-center gap-2 border border-green-600 text-green-600 font-semibold  rounded-md px-3 py-1 hover:bg-green-50 transition">
+  Tampilkan semua  ->
+  </a></div>  </section>
+
+<footer class="bg-gray-800 text-white mt-20">
+  <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 items-start gap-8">
+
+    <!-- Kolom 1: Logo -->
+    <div class="flex justify-center md:justify-start">
+      <a href="index.html">
+      <img src="../src/image/logo.png" alt="Greenovation Logo" class="w-20 h-20">
+      </a>
+    </div>
+
+    <!-- Kolom 2: Nama + Menu (MENYATU) -->
+    <div class="flex flex-col  space-y-1">
+      <!-- Nama -->
+      <span class="font-bold text-lg">GREENOVATION</span>
+
+      <!-- Menu -->
+      <nav class="flex  gap-3">
+        <a href="tentangkami.html" class="hover:text-green-500">Tentang Kami</a>
+        <a href="layanan.html" class="hover:text-green-500">Layanan</a>
+        <a href="video.html" class="hover:text-green-500">Video</a>
+        <a href="game.html" class="hover:text-green-500">Game</a>
+        <a href="belanja.html" class="hover:text-green-500">Toko</a>
+      </nav>
+    </div>
+
+    <!-- Kolom 3: Tombol WhatsApp -->
+    <div class="flex justify-center md:justify-end">
+      <a href="https://wa.me/+62881012478760?text=Halo%20Greenovation"
+         class="border border-green-600 text-green-500 hover:bg-green-600 hover:text-white px-5 py-2 rounded-lg flex items-center space-x-2 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+          <path d="M20.52 3.48A11.92 11.92 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.59 6.01L0 24l6.17-1.59A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.82c-1.93 0-3.81-.52-5.44-1.51l-.39-.23-3.66.94.98-3.56-.25-.37a9.85 9.85 0 0 1-1.55-5.08c0-5.44 4.43-9.87 9.87-9.87 2.64 0 5.12 1.03 6.99 2.9a9.85 9.85 0 0 1 2.88 6.97c0 5.44-4.43 9.87-9.87 9.87zm5.61-7.4c-.31-.16-1.84-.91-2.12-1.01-.28-.1-.48-.16-.68.16-.2.31-.78 1.01-.95 1.22-.17.2-.35.23-.66.08-.31-.16-1.32-.49-2.52-1.57-.93-.83-1.56-1.86-1.74-2.17-.18-.31-.02-.48.13-.63.13-.13.31-.35.46-.52.15-.17.2-.29.3-.49.1-.2.05-.38-.02-.54-.07-.16-.68-1.63-.93-2.24-.24-.57-.48-.5-.66-.51h-.57c-.2 0-.52.08-.79.38s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.12.57-.09 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.48-.07-.12-.28-.2-.59-.36z"/>
+        </svg>
+        <span>Whatsapp</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-black text-sm py-3 border-t border-gray-700 bg-white">
+    © 2025 Greenovation. All rights reserved.
+  </div>
+</footer>
+
+
+  <!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Inisialisasi map di koordinat yang kamu kasih
+  var map = L.map('map').setView([-6.1641491, 106.762682], 16);
+
+  // Tambahkan tile layer dari OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Tambahkan marker
+  var marker = L.marker([-6.1641491, 106.762682]).addTo(map);
+
+  // Popup seperti card
+  marker.bindPopup(`
+    <div style="width:180px; text-align:center; font-family:sans-serif;">
+      <img src="../src/image/contoh.jpg" alt="Lokasi Drop Off" 
+           style="width:100%; height:auto; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+      <h3 style="margin:8px 0 4px; font-size:14px; font-weight:600; color:#111;">
+        Jakarta Barat, Kedoya Selatan, Kebon Jeruk, RT.5/RW.2, Kec. Kebon Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11520
+      </h3>
+      <a href="https://maps.app.goo.gl/AD8QyGjoyRWjprYF9" target="_blank"
+         style="color:#16a34a; font-weight:600; font-size:13px; text-decoration:none;">
+         Lihat di Gmaps &rarr;
+      </a>
+    </div>
+  `);
+</script>
+
+
+<script>
+const burgerBtn = document.getElementById("burger-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const mobileOverlay = document.getElementById("mobile-overlay");
+const closeMenu = document.getElementById("close-menu");
+
+burgerBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-x-full");
+  mobileOverlay.classList.remove("hidden");
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.classList.add("translate-x-full");
+  mobileOverlay.classList.add("hidden");
+});
+
+mobileOverlay.addEventListener("click", () => {
+  mobileMenu.classList.add("translate-x-full");
+  mobileOverlay.classList.add("hidden");
+});
+</script>
+<script>
+// Deteksi device layar sentuh
+if ('ontouchstart' in window) {
+  document.querySelectorAll('.layanan-card').forEach(card => {
+    card.addEventListener('click', function (e) {
+      // Hapus state aktif di semua card
+      document.querySelectorAll('.layanan-card').forEach(c => c.classList.remove('bg-green-50'));
+      // Tambahkan state aktif di card yang diklik
+      this.classList.add('bg-green-50');
+    });
+  });
+}
+</script>
+
+</body>
+</html>

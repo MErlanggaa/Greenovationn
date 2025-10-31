@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenovation | Pick Up</title>
+      <link href="../../src/output.css" rel="stylesheet">
+<link rel="icon" href="../../src/image/logo.png" type="image/png" sizes="512x512">
+
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- HEADER -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="../index.html">
+      <img src="../../src/image/logo.png" alt="Logo" class="h-16 w-auto">
+    </a>
+
+    <!-- Menu Navigasi (Desktop) -->
+    <nav class="hidden md:flex space-x-6 font-medium">
+      <a href="../tentangkami.html" class="hover:text-green-600">Tentang Kami</a>
+      <a href="../layanan.html" class="hover:text-green-600">Layanan</a>
+      <a href="../video.html" class="hover:text-green-600">Video</a>
+      <a href="../game.html" class="hover:text-green-600">Game</a>
+      <a href="../belanja.html" class="hover:text-green-600">Toko</a>
+    </nav>
+
+    <!-- Burger Button (Mobile) -->
+    <button id="burger-btn" class="md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay & Drawer -->
+<div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col p-6 space-y-4">
+  <div class="flex justify-between items-center">
+    <span class="font-bold text-lg text-green-700">Menu</span>
+    <button id="close-menu" class="focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <a href="../tentangkami.html" class="hover:text-green-600">Tentang Kami</a>
+  <a href="../layanan.html" class="hover:text-green-600">Layanan</a>
+  <a href="../video.html" class="hover:text-green-600">Video</a>
+  <a href="../game.html" class="hover:text-green-600">Game</a>
+  <a href="../belanja.html" class="hover:text-green-600">Toko</a>
+
+  <div class="mt-auto text-xs text-gray-500 border-t pt-4">
+    © 2025 Greenovation
+  </div>
+</div>
+  <div class="h-16"></div>
+
+  <!-- HERO -->
+  <!-- HERO -->
+ <section class="relative bg-cover bg-center bg-no-repeat h-[600px]"
+         style="background-image: url('../../src/image/header.png');">
+  <div class="max-w-6xl mx-auto px-8 flex flex-col justify-center h-full">
+<div class="flex items-center gap-3">
+  <img src="../../src/image/pickup.png" alt="Pickup" class="w-20 h-20">
+  <h1 class="text-3xl md:text-5xl font-bold text-white">Pick Up</h1>
+</div>
+
+    <p class="text-white text-lg mt-2">Isi Formulir yang sudah disediakan, setelah itu klik kirim, akan otomatis ke Whatsapp,<br> tambahkan foto sampah daur ulangmu, Greenovation akan menjemput,<br> menimbang, dan membayar  sampahmu.</p>
+  
+  </div>
+</section>
+
+  <!-- FORM + CARA PAKAI -->
+  <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-10 px-4">
+    
+    <!-- Cara Pakai -->
+    <div>
+      <h2 class="text-3xl font-bold mb-6 text-center md:text-left">Cara Pakai</h2>
+      <ol class="space-y-4">
+        <li class="flex items-center gap-3">
+          <span class="w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">1</span>
+          Isi nama
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">2</span>
+          Pilih Jenis Sampah
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">3</span>
+          Isi alamat
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">4</span>
+          Klik kirim formulir
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">5</span>
+          Tambahkan foto sampah di WhatsApp
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-6 h-6 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">6</span>
+          Penjemputan & pembayaran
+        </li>
+      </ol>
+    </div>
+
+    <!-- Form -->
+    <div class="pickup-form bg-white border rounded-xl shadow-md p-6">
+      <h3 class="text-xl font-bold mb-2">Formulir Pickup</h3>
+      <p class="text-sm text-gray-600 mb-4">Pengambilan Sampah Daur Ulang</p>
+
+      <form class="space-y-4">
+        <div>
+          <label for="name" class="block font-semibold">Nama*</label>
+          <input type="text" id="name" class="w-full border rounded-lg px-3 py-2" placeholder="Isi nama panjangmu">
+        </div>
+
+        <div>
+          <label class="block font-semibold">Jenis Sampah*</label>
+          <div class="space-y-3">
+
+            <!-- Reusable Option Row -->
+            <div class="option-row border rounded-lg p-3 flex justify-between items-center" data-name="Plastik">
+              <div class="flex items-center gap-3">
+                <img src="../../src/image/Plastik.png" class="h-6" alt="">
+                <p>Plastik</p>
+              </div>
+              <div class="unselected-state">
+                <button type="button" class="select-btn bg-green-500 text-white px-3 py-1 rounded">Pilih</button>
+              </div>
+               <div class="selected-state hidden flex items-center gap-2">
+  <input type="text" class="weight-input border rounded px-2 py-1 w-24 text-sm leading-tight" placeholder="0kg">
+  <img src="../../src/image/Edit.png" class="edit-icon h-5 inline-block align-middle cursor-pointer">
+  <img src="../../src/image/Sampah.png" class="trash-icon h-5 inline-block align-middle cursor-pointer">
+</div>
+            </div>
+
+            <!-- Tambahkan untuk Alumunium, Kertas, Botol Kaca, Elektronik, Besi & Logam, Kain, Minyak -->
+            <div class="option-row border rounded-lg p-3 flex justify-between items-center" data-name="Alumunium">
+              <div class="flex items-center gap-3">
+                <img src="../../src/image/Alumunium.png" class="h-6" alt="">
+                <p>Alumunium</p>
+              </div>
+              <div class="unselected-state">
+                <button type="button" class="select-btn bg-green-500 text-white px-3 py-1 rounded">Pilih</button>
+              </div>
+              <div class="selected-state hidden flex items-center gap-2">
+  <input type="text" class="weight-input border rounded px-2 py-1 w-24 text-sm leading-tight" placeholder="0kg">
+  <img src="../../src/image/Edit.png" class="edit-icon h-5 inline-block align-middle cursor-pointer">
+  <img src="../../src/image/Sampah.png" class="trash-icon h-5 inline-block align-middle cursor-pointer">
+</div>
+            </div>
+
+            <div class="option-row border rounded-lg p-3 flex justify-between items-center" data-name="Kertas">
+              <div class="flex items-center gap-3">
+                <img src="../../src/image/Kertas.png" class="h-6" alt="">
+                <p>Kertas</p>
+              </div>
+              <div class="unselected-state">
+                <button type="button" class="select-btn bg-green-500 text-white px-3 py-1 rounded">Pilih</button>
+              </div>
+          <div class="selected-state hidden flex items-center gap-2">
+  <input type="text" class="weight-input border rounded px-2 py-1 w-24 text-sm leading-tight" placeholder="0kg">
+  <img src="../../src/image/Edit.png" class="edit-icon h-5 inline-block align-middle cursor-pointer">
+  <img src="../../src/image/Sampah.png" class="trash-icon h-5 inline-block align-middle cursor-pointer">
+</div>
+            </div>
+
+            <div class="option-row border rounded-lg p-3 flex justify-between items-center" data-name="Botol Kaca">
+              <div class="flex items-center gap-3">
+                <img src="../../src/image/botolkaca.png" class="h-6" alt="">
+                <p>Botol Kaca</p>
+              </div>
+              <div class="unselected-state">
+                <button type="button" class="select-btn bg-green-500 text-white px-3 py-1 rounded">Pilih</button>
+              </div>
+            <div class="selected-state hidden flex items-center gap-2">
+  <input type="text" class="weight-input border rounded px-2 py-1 w-24 text-sm leading-tight" placeholder="0kg">
+  <img src="../../src/image/Edit.png" class="edit-icon h-5 inline-block align-middle cursor-pointer">
+  <img src="../../src/image/Sampah.png" class="trash-icon h-5 inline-block align-middle cursor-pointer">
+</div>
+            </div>
+
+            <div class="option-row border rounded-lg p-3 flex justify-between items-center" data-name="Elektronik">
+              <div class="flex items-center gap-3">
+                <img src="../../src/image/elektronik.png" class="h-6" alt="">
+                <p>Elektronik</p>
+              </div>
+              <div class="unselected-state">
+                <button type="button" class="select-btn bg-green-500 text-white px-3 py-1 rounded">Pilih</button>
+              </div>
+              <div class="selected-state hidden flex items-center gap-2">
+  <input type="text" class="weight-input border rounded px-2 py-1 w-24 text-sm leading-tight" placeholder="0kg">
+  <img src="../../src/image/Edit.png" class="edit-icon h-5 inline-block align-middle cursor-pointer">
+  <img src="../../src/image/Sampah.png" class="trash-icon h-5 inline-block align-middle cursor-pointer">
+</div>
+            </div>
+
+            <div class="option-row border rounded-lg p-3 flex justify-between items-center" data-name="Besi & Logam">
+              <div class="flex items-center gap-3">
+                <img src="../../src/image/besi&logam.png" class="h-6" alt="">
+                <p>Besi & Logam</p>
+              </div>
+              <div class="unselected-state">
+                <button type="button" class="select-btn bg-green-500 text-white px-3 py-1 rounded">Pilih</button>
+              </div>
+               <div class="selected-state hidden flex items-center gap-2">
+  <input type="text" class="weight-input border rounded px-2 py-1 w-24 text-sm leading-tight" placeholder="0kg">
+  <img src="../../src/image/Edit.png" class="edit-icon h-5 inline-block align-middle cursor-pointer">
+  <img src="../../src/image/Sampah.png" class="trash-icon h-5 inline-block align-middle cursor-pointer">
+</div>
+            </div>
+
+            <div class="option-row border rounded-lg p-3 flex justify-between items-center" data-name="Kain">
+              <div class="flex items-center gap-3">
+                <img src="../../src/image/Kain.png" class="h-6" alt="">
+                <p>Kain</p>
+              </div>
+              <div class="unselected-state">
+                <button type="button" class="select-btn bg-green-500 text-white px-3 py-1 rounded">Pilih</button>
+              </div>
+             <div class="selected-state hidden flex items-center gap-2">
+  <input type="text" class="weight-input border rounded px-2 py-1 w-24 text-sm leading-tight" placeholder="0kg">
+  <img src="../../src/image/Edit.png" class="edit-icon h-5 inline-block align-middle cursor-pointer">
+  <img src="../../src/image/Sampah.png" class="trash-icon h-5 inline-block align-middle cursor-pointer">
+</div>
+
+            </div>
+
+            <div class="option-row border rounded-lg p-3 flex justify-between items-center" data-name="Minyak">
+              <div class="flex items-center gap-3">
+                <img src="../../src/image/Minyak.png" class="h-6" alt="">
+                <p>Minyak</p>
+              </div>
+              <div class="unselected-state">
+                <button type="button" class="select-btn bg-green-500 text-white px-3 py-1 rounded">Pilih</button>
+              </div>
+                 <div class="selected-state hidden flex items-center gap-2">
+  <input type="text" class="weight-input border rounded px-2 py-1 w-24 text-sm leading-tight" placeholder="0kg">
+  <img src="../../src/image/Edit.png" class="edit-icon h-5 inline-block align-middle cursor-pointer">
+  <img src="../../src/image/Sampah.png" class="trash-icon h-5 inline-block align-middle cursor-pointer">
+</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <label for="address" class="block font-semibold">Alamat*</label>
+          <input type="text" id="address" class="w-full border rounded-lg px-3 py-2" placeholder="Isi alamatmu dengan benar!">
+        </div>
+
+        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold w-full py-2 rounded-lg flex items-center justify-center gap-2">
+       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+          <path d="M20.52 3.48A11.92 11.92 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.59 6.01L0 24l6.17-1.59A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.82c-1.93 0-3.81-.52-5.44-1.51l-.39-.23-3.66.94.98-3.56-.25-.37a9.85 9.85 0 0 1-1.55-5.08c0-5.44 4.43-9.87 9.87-9.87 2.64 0 5.12 1.03 6.99 2.9a9.85 9.85 0 0 1 2.88 6.97c0 5.44-4.43 9.87-9.87 9.87zm5.61-7.4c-.31-.16-1.84-.91-2.12-1.01-.28-.1-.48-.16-.68.16-.2.31-.78 1.01-.95 1.22-.17.2-.35.23-.66.08-.31-.16-1.32-.49-2.52-1.57-.93-.83-1.56-1.86-1.74-2.17-.18-.31-.02-.48.13-.63.13-.13.31-.35.46-.52.15-.17.2-.29.3-.49.1-.2.05-.38-.02-.54-.07-.16-.68-1.63-.93-2.24-.24-.57-.48-.5-.66-.51h-.57c-.2 0-.52.08-.79.38s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.12.57-.09 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.48-.07-.12-.28-.2-.59-.36z"/>
+        </svg> Kirim Formulir
+        </button>
+      </form>
+    </div>
+  </section>
+<footer class="bg-gray-800 text-white mt-20">
+  <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 items-start gap-8">
+
+    <!-- Kolom 1: Logo -->
+    <div class="flex justify-center md:justify-start">
+      <img src="../../src/image/logo.png" alt="Greenovation Logo" class="w-20 h-20">
+    </div>
+
+    <!-- Kolom 2: Nama + Menu (MENYATU) -->
+    <div class="flex flex-col  space-y-1">
+      <!-- Nama -->
+      <span class="font-bold text-lg">GREENOVATION</span>
+
+      <!-- Menu -->
+      <nav class="flex  gap-3">
+        <a href="#" class="hover:text-green-500">Tentang Kami</a>
+        <a href="#" class="hover:text-green-500">Layanan</a>
+        <a href="#" class="hover:text-green-500">Video</a>
+        <a href="#" class="hover:text-green-500">Game</a>
+        <a href="#" class="hover:text-green-500">Toko</a>
+      </nav>
+    </div>
+
+    <!-- Kolom 3: Tombol WhatsApp -->
+    <div class="flex justify-center md:justify-end">
+      <a href="https://wa.me/+62881012478760?text=Halo%20Greenovation"
+         class="border border-green-600 text-green-500 hover:bg-green-600 hover:text-white px-5 py-2 rounded-lg flex items-center space-x-2 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+          <path d="M20.52 3.48A11.92 11.92 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.59 6.01L0 24l6.17-1.59A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.82c-1.93 0-3.81-.52-5.44-1.51l-.39-.23-3.66.94.98-3.56-.25-.37a9.85 9.85 0 0 1-1.55-5.08c0-5.44 4.43-9.87 9.87-9.87 2.64 0 5.12 1.03 6.99 2.9a9.85 9.85 0 0 1 2.88 6.97c0 5.44-4.43 9.87-9.87 9.87zm5.61-7.4c-.31-.16-1.84-.91-2.12-1.01-.28-.1-.48-.16-.68.16-.2.31-.78 1.01-.95 1.22-.17.2-.35.23-.66.08-.31-.16-1.32-.49-2.52-1.57-.93-.83-1.56-1.86-1.74-2.17-.18-.31-.02-.48.13-.63.13-.13.31-.35.46-.52.15-.17.2-.29.3-.49.1-.2.05-.38-.02-.54-.07-.16-.68-1.63-.93-2.24-.24-.57-.48-.5-.66-.51h-.57c-.2 0-.52.08-.79.38s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.12.57-.09 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.48-.07-.12-.28-.2-.59-.36z"/>
+        </svg>
+        <span>Whatsapp</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-black text-sm py-3 border-t border-gray-700 bg-white">
+    © 2025 Greenovation. All rights reserved.
+  </div>
+</footer>
+  <!-- JS -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const selectButtons = document.querySelectorAll('.select-btn');
+  const trashIcons = document.querySelectorAll('.trash-icon');
+  const editIcons = document.querySelectorAll('.edit-icon');
+
+  selectButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const optionRow = this.closest('.option-row');
+      optionRow.classList.add('selected');
+      optionRow.querySelector('.unselected-state').classList.add('hidden');
+      optionRow.querySelector('.selected-state').classList.remove('hidden');
+      optionRow.querySelector('.weight-input').focus();
+    });
+  });
+
+  trashIcons.forEach(icon => {
+    icon.addEventListener('click', function () {
+      const optionRow = this.closest('.option-row');
+      optionRow.classList.remove('selected');
+      optionRow.querySelector('.weight-input').value = '';
+      optionRow.querySelector('.unselected-state').classList.remove('hidden');
+      optionRow.querySelector('.selected-state').classList.add('hidden');
+    });
+  });
+
+  editIcons.forEach(icon => {
+    icon.addEventListener('click', function () {
+      this.closest('.option-row').querySelector('.weight-input').focus();
+    });
+  });
+
+  const form = document.querySelector('.pickup-form form');
+  const whatsappNumber = "+62881012478760"; // GANTI NOMOR WA
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const selectedItems = document.querySelectorAll('.option-row.selected');
+
+    let message = `Halo Greenovation, saya ingin mendaur ulang sampah.%0A%0A`;
+    message += `Nama: ${encodeURIComponent(name)}%0AAlamat: ${encodeURIComponent(address)}%0A%0A`;
+    message += `Daftar Sampah:%0A`;
+
+    selectedItems.forEach(item => {
+      const trashName = item.dataset.name;
+      let weight = item.querySelector('.weight-input').value.trim();
+      if (weight === '') weight = 'Belum diisi';
+      message += `- ${encodeURIComponent(trashName)}: ${encodeURIComponent(weight)}%0A`;
+    });
+
+    if (selectedItems.length === 0) {
+      message += `- Tidak ada sampah yang dipilih.%0A`;
+    }
+
+    message += `%0AMohon konfirmasi jadwal penjemputan. Terima kasih.`;
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+  });
+});
+</script>
+<script>
+const burgerBtn = document.getElementById("burger-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const mobileOverlay = document.getElementById("mobile-overlay");
+const closeMenu = document.getElementById("close-menu");
+
+burgerBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-x-full");
+  mobileOverlay.classList.remove("hidden");
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.classList.add("translate-x-full");
+  mobileOverlay.classList.add("hidden");
+});
+
+mobileOverlay.addEventListener("click", () => {
+  mobileMenu.classList.add("translate-x-full");
+  mobileOverlay.classList.add("hidden");
+});
+</script>
+</body>
+</html>

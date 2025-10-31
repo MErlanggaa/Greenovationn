@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Edukasi Lingkungan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+
+ 
+    <div id="level1">
+      <div class="score-timer">
+        <div>Skor: <span id="score">0</span></div>
+        <div>Waktu: <span id="timer">10</span>s</div>
+      </div>
+
+      <div class="question" id="question">Soal akan muncul di sini</div>
+      <div class="answers" id="answers"></div>
+      <div class="status" id="status"></div>
+    </div>
+
+  
+    <div id="next-level" class="hidden">
+      <h2>Level 1 Selesai 🎉</h2>
+      <p>Skor kamu: <span id="finalScore"></span></p>
+      <button onclick="startLevel2()">Lanjut ke Level 2</button>
+      <button onclick="endGame()">Selesai</button>
+    </div>
+
+ 
+    <div id="level2" class="hidden">
+      <h2 id="question2">Mana yang termasuk sampah organik?</h2>
+      <div class="balloons">
+        <div class="balloon" onclick="checkAnswer2(0)">
+          <img src="assets/2.png" alt="Plastik">
+        </div>
+        <div class="balloon" onclick="checkAnswer2(1)">
+          <img src="assets/1.png" alt="Tomat">
+        </div>
+        <div class="balloon" onclick="checkAnswer2(2)">
+          <img src="assets/3.png" alt="Kardus">
+        </div>
+      </div>
+      <div id="status2" class="status"></div>
+    </div>
+
+ 
+    <div id="game-over" class="hidden">
+      <h2>🎉 Selamat, kamu sudah menyelesaikan game!</h2>
+      <p>Skor akhir kamu: <span id="finalScoreEnd"></span></p>
+      <button onclick="restartGame()">Mainkan Lagi</button>
+      <button onclick="exitGame()">Keluar</button>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

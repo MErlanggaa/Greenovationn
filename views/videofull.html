@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenovation | Video</title>
+      <link href="../src/output.css" rel="stylesheet">
+<link rel="icon" href="../src/image/logo.png" type="image/png" sizes="512x512">
+<style>
+    @media (max-width: 360px) {
+  section.hero-section {
+    height: 350px;
+    background-position: top center;
+  }
+}
+</style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- HEADER -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="index.html">
+      <img src="../src/image/logo.png" alt="Logo" class="h-16 w-auto">
+    </a>
+
+    <!-- Menu Navigasi (Desktop) -->
+    <nav class="hidden md:flex space-x-6 font-medium">
+      <a href="tentangkami.html" class="hover:text-green-600">Tentang Kami</a>
+      <a href="layanan.html" class="hover:text-green-600">Layanan</a>
+      <a href="video.html" class="hover:text-green-600">Video</a>
+      <a href="game.html" class="hover:text-green-600">Game</a>
+      <a href="belanja.html" class="hover:text-green-600">Toko</a>
+    </nav>
+
+    <!-- Burger Button (Mobile) -->
+    <button id="burger-btn" class="md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay & Drawer -->
+<div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col p-6 space-y-4">
+  <div class="flex justify-between items-center">
+    <span class="font-bold text-lg text-green-700">Menu</span>
+    <button id="close-menu" class="focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <a href="tentangkami.html" class="hover:text-green-600">Tentang Kami</a>
+  <a href="layanan.html" class="hover:text-green-600">Layanan</a>
+  <a href="video.html" class="hover:text-green-600">Video</a>
+  <a href="game.html" class="hover:text-green-600">Game</a>
+  <a href="belanja.html" class="hover:text-green-600">Toko</a>
+
+  <div class="mt-auto text-xs text-gray-500 border-t pt-4">
+    © 2025 Greenovation
+  </div>
+</div>
+
+<!-- Tambahkan margin-top di bawah header agar tidak ketutupan -->
+<div class="h-16"></div>
+<section class="relative bg-cover bg-top bg-no-repeat h-[250px] sm:h-[500px] md:h-[600px]"
+         style="background-image: url('../src/image/header.png');">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 flex flex-col justify-center h-full">
+    <h1 class="text-3xl md:text-5xl font-bold text-white">Greenovation Education</h1>
+    <p class="text-white text-sm md:text-lg mt-2">#Belajardanbermainbersamagreenovation</p>
+  </div>
+</section>
+
+  <!-- SECTION VIDEO -->
+  <main class="max-w-6xl mx-auto px-6 mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Video Utama -->
+    <div class="md:col-span-2">
+      <div class="bg-white rounded-lg overflow-hidden shadow">
+        <iframe id="videoFrame" class="w-full aspect-video" frameborder="0" allowfullscreen></iframe>
+        <div class="p-3">
+          <p id="videoTitle" class="text-sm font-semibold"></p>
+          <p class="text-xs text-gray-500">Greenovation</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daftar Video -->
+    <div id="videoList" class="space-y-4"></div>
+  </main>
+<footer class="bg-gray-800 text-white mt-5">
+  <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 items-start gap-8">
+
+    <!-- Kolom 1: Logo -->
+    <div class="flex justify-center md:justify-start">
+      <a href="index.html">
+      <img src="../src/image/logo.png" alt="Greenovation Logo" class="w-20 h-20">
+      </a>
+    </div>
+
+    <!-- Kolom 2: Nama + Menu (MENYATU) -->
+    <div class="flex flex-col  space-y-1">
+      <!-- Nama -->
+      <span class="font-bold text-lg">GREENOVATION</span>
+
+      <!-- Menu -->
+      <nav class="flex  gap-3">
+        <a href="tentangkami.html" class="hover:text-green-500">Tentang Kami</a>
+        <a href="layanan.html" class="hover:text-green-500">Layanan</a>
+        <a href="video.html" class="hover:text-green-500">Video</a>
+        <a href="game.html" class="text-green-500">Game</a>
+        <a href="belanja.html" class="hover:text-green-500">Toko</a>
+      </nav>
+    </div>
+    <!-- Kolom 3: Tombol WhatsApp -->
+    <div class="flex justify-center md:justify-end">
+      <a href="https://wa.me/+62881012478760?text=Halo%20Greenovation"
+         class="border border-green-600 text-green-500 hover:bg-green-600 hover:text-white px-5 py-2 rounded-lg flex items-center space-x-2 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+          <path d="M20.52 3.48A11.92 11.92 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.59 6.01L0 24l6.17-1.59A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.82c-1.93 0-3.81-.52-5.44-1.51l-.39-.23-3.66.94.98-3.56-.25-.37a9.85 9.85 0 0 1-1.55-5.08c0-5.44 4.43-9.87 9.87-9.87 2.64 0 5.12 1.03 6.99 2.9a9.85 9.85 0 0 1 2.88 6.97c0 5.44-4.43 9.87-9.87 9.87zm5.61-7.4c-.31-.16-1.84-.91-2.12-1.01-.28-.1-.48-.16-.68.16-.2.31-.78 1.01-.95 1.22-.17.2-.35.23-.66.08-.31-.16-1.32-.49-2.52-1.57-.93-.83-1.56-1.86-1.74-2.17-.18-.31-.02-.48.13-.63.13-.13.31-.35.46-.52.15-.17.2-.29.3-.49.1-.2.05-.38-.02-.54-.07-.16-.68-1.63-.93-2.24-.24-.57-.48-.5-.66-.51h-.57c-.2 0-.52.08-.79.38s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.62.71.22 1.36.19 1.87.12.57-.09 1.84-.75 2.1-1.48.26-.73.26-1.36.18-1.48-.07-.12-.28-.2-.59-.36z"/>
+        </svg>
+        <span>Whatsapp</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-black text-sm py-3 border-t border-gray-700 bg-white">
+    © 2025 Greenovation. All rights reserved.
+  </div>
+</footer>
+  <script>
+    // Ambil parameter dari URL
+    const params = new URLSearchParams(window.location.search);
+    const currentId = params.get('id');
+    const currentTitle = params.get('title');
+
+    // Array daftar video (bisa kamu simpan di JS agar mudah diubah)
+    const videos = [
+      { id: "WQCevNdGOUs", title: "Kerajinan Dari Botol Bekas " },
+      { id: "ogE3n_KdYfg", title: "Kerajinan Dari Gelas Plastik" },
+      { id: "Rx0rDtX89gw", title: "Ubah Bungkus Mie menjadi dompet" },
+      { id: "kU6OvhRf21k", title: "Ubah Gelas Plastik Menjadi Vas" }
+    ];
+
+    // Tampilkan video utama
+    document.getElementById("videoFrame").src = `https://www.youtube.com/embed/${currentId}`;
+    document.getElementById("videoTitle").textContent = decodeURIComponent(currentTitle);
+
+    // Render daftar video lain
+    const listContainer = document.getElementById("videoList");
+    videos
+      .filter(video => video.id !== currentId) // sembunyikan video yang sedang diputar
+      .forEach(video => {
+        const div = document.createElement("a");
+        div.href = `videofull.html?id=${video.id}&title=${encodeURIComponent(video.title)}`;
+        div.className = "flex items-start space-x-3 bg-white rounded-lg shadow p-2 hover:bg-gray-100";
+        div.innerHTML = `
+          <img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" alt="${video.title}" class="rounded w-24 h-14 object-cover">
+          <div>
+            <p class="text-sm font-semibold leading-tight">${video.title}</p>
+            <p class="text-xs text-gray-500">Greenovation</p>
+          </div>`;
+        listContainer.appendChild(div);
+      });
+  </script>
+<script>
+const burgerBtn = document.getElementById("burger-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const mobileOverlay = document.getElementById("mobile-overlay");
+const closeMenu = document.getElementById("close-menu");
+
+burgerBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-x-full");
+  mobileOverlay.classList.remove("hidden");
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.classList.add("translate-x-full");
+  mobileOverlay.classList.add("hidden");
+});
+
+mobileOverlay.addEventListener("click", () => {
+  mobileMenu.classList.add("translate-x-full");
+  mobileOverlay.classList.add("hidden");
+});
+</script>
+</body>
+</html>
